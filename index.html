@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Dice Roller🎲</title>
+    <style>
+        body{
+            background-color:rgb(202, 179, 184) ;
+        }
+        .dice-card-container{
+            display:block;
+            background-color: antiquewhite;
+            height:250px;
+            width:150px;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 1px 2px 4px 3px ;
+           border-radius: solid 5px;
+           padding: 20px;
+           margin-top: 50px;
+            
+        }
+        .roller-btn{
+            background-color: rgb(36, 32, 32);
+            color: white;
+            border-radius: 15px;
+            width: 100px;
+            margin: 10px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 25px ;
+        }
+        .roller-btn:hover{
+               box-shadow: 1px 1px 2px 1px purple;
+        }
+        .dice-number{
+            text-align: center;
+        }
+        .dice1-img{
+            margin-left: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dice-card-container">
+       <img src="./dice1.png" class="dice1-img" id="dice-img" onclick="roller()"/>
+
+       <h2 class="dice-number" id="dice-number">1</h2>
+
+       <button class="roller-btn" onclick="roller()">Roller🎲</button>
+    </div>
+
+
+    <script>
+        function roller(){
+        const min = 1;
+        const max = 6;
+
+        const number = Math.floor(Math.random() * (max - min + 1)) + min;
+        document.getElementById("dice-number").innerHTML=number;
+
+        if(number==1)
+        {
+            document.getElementById("dice-img").src="./dice1.png";
+        }
+        else if(number==2)
+        {
+            document.getElementById("dice-img").src="./dice2.png";
+        }
+        else if(number==3)
+        {
+            document.getElementById("dice-img").src="./dice3.png";
+        }
+        else if(number==4)
+        {
+            document.getElementById("dice-img").src="./dice4.png";
+        }
+        else if(number==5)
+        {
+            document.getElementById("dice-img").src="./dice5.png";
+        }
+        else 
+        {
+            document.getElementById("dice-img").src="./dice6.png";
+        }
+    }
+    </script>
+</body>
+</html>
